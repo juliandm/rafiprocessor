@@ -26,22 +26,20 @@ if len(sys.argv) > 0:
          
         fl =f.readlines()
         print("Succesfully read lines of both files")
-         
-        # save previous line to skip duplicates
-        prevLine= ""
-         
-        for line in fl:
-			# extract the coordinates
-			splitString = line.split(" ")
-			x_value = float(splitString[0])
-			y_value = float(splitString[1])
-			IN_BOUNDS = x_value >= MIN_X and x_value <= MAX_X and y_value >= MIN_Y and y_value <= MAX_Y
 
-			# skip duplicate lines
-			if IN_BOUNDS
-				print("wrote line", line)
-			else:
-				print("skipped line")
+        for line in fl:
+							
+            # extract the coordinates
+            splitString = line.split(" ")
+            x_value = float(splitString[0])
+            y_value = float(splitString[1])
+            IN_BOUNDS = x_value >= MIN_X and x_value <= MAX_X and y_value >= MIN_Y and y_value <= MAX_Y
+
+            # skip duplicate lines
+            if IN_BOUNDS
+                print("wrote line", line)
+            else:
+                print("skipped line")
                      
         # close
         f.close()
